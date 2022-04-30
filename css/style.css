@@ -17,6 +17,7 @@ header{
     position: absolute;
     left: 0;
     width: 100%;
+    z-index: 2;
 }
 header .container{
     display: flex;
@@ -37,10 +38,6 @@ header .container::after{
 }
 .logo img{
     width: 100%;
-}
-
-nav{
-   
 }
 
 header nav ul{
@@ -133,13 +130,13 @@ form {
          position: absolute;
          top: 100%;
          left: 0;
-         background-color: #15171848;
+         background-color: #151718d2;
          padding-left: 0;
      }
 
      #checkbox:checked ~ nav ul li{
         width: 100%;
-        padding: 15px 0;
+        padding: 15px;
         border-bottom: 1px solid transparent;
      }
 
@@ -150,13 +147,14 @@ form {
          border: none;
          opacity: 1;
          transition: opacity .1s  .2s ease;
+         padding: 0;
      }
 
      nav ul a {
         opacity: 0;
      }
 
-     nav ul li:hover  {
+     nav ul li:hover {
         border-bottom: 1px solid #19c8fa;
         transition: border .3s linear;
      }
@@ -177,4 +175,69 @@ form {
     min-height: 100vh;
     background-image: url(../images/landing.jpg);
     background-size: cover;
+}
+
+.over-lay{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: .7;
+}
+
+.content-text{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: #19c9fa80;
+    color: white;
+    padding: 50px;
+    width: 50%;
+}
+
+@media (max-width: 758px){
+    .content-text{
+      width: auto;
+
+    }   
+}
+
+.fa-angle-right{
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    color: white;
+}
+
+.fa-angle-left{
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    color: white;
+}
+
+.bullets {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+.bullets li{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    list-style: none;
+    margin-left: 15px;
+    border: 1px solid white;
+}
+
+.bullets .active{
+   background-color: #19c8fa;
+   border: none;
 }
